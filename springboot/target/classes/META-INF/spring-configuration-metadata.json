@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "user",
+      "type": "com.boot.model.User",
+      "sourceType": "com.boot.model.User"
+    }
+  ],
+  "properties": [
+    {
+      "name": "user.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.boot.model.User"
+    },
+    {
+      "name": "user.username",
+      "type": "java.lang.String",
+      "sourceType": "com.boot.model.User"
+    }
+  ],
+  "hints": []
+}
