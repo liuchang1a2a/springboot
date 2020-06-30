@@ -3,10 +3,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.Banner.Mode;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.boot.model.User;
@@ -14,10 +14,10 @@ import com.boot.model.User;
 /**
  *	入口类
  */
-@EnableAutoConfiguration
+
 //@ImportResource({"classpath:context.xml"})	引入xml
 @RestController
-@ComponentScan
+@SpringBootApplication
 public class Home {
 	
 	@RequestMapping("/home")
@@ -26,11 +26,19 @@ public class Home {
 	}
 	
 	@Autowired
-	User user;
+	private User user;
 	
 	@RequestMapping("/user")
 	public String user(HttpServletRequest req,HttpServletResponse res){
 		return user.toString();
+	}
+	
+	@Value("${user.username}")
+	private String username;
+	
+	@RequestMapping("/username")
+	public String username() {
+		return username;
 	}
 	
 	public static void main(String[] args) {
