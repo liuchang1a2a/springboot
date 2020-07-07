@@ -56,6 +56,7 @@ public class WebConfig implements WebMvcConfigurer{
 		.allowedMethods("GET","POST","DELETE","PUT").maxAge(3600*24);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
 		FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
