@@ -22,7 +22,7 @@ public class Home {
 	
 	@RequestMapping("/home")
 	public String welcome(HttpServletRequest req,HttpServletResponse res){
-		return "WELCOME TO SPRINGBOOT";
+		return "WELCOME TO SPRINGBOOT 刘畅";
 	}
 	
 	@Autowired
