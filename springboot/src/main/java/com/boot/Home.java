@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.Banner.Mode;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.boot.model.User;
@@ -17,6 +18,7 @@ import com.boot.model.User;
 
 //@ImportResource({"classpath:context.xml"})	引入xml
 @RestController
+@EnableTransactionManagement		// 开启事务
 @SpringBootApplication
 public class Home {
 	
